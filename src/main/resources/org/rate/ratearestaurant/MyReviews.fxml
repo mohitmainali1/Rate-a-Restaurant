@@ -1,0 +1,53 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight = "800.0" prefWidth = "800.0" xmlns = "http://javafx.com/javafx/21" xmlns:fx = "http://javafx.com/fxml/1" fx:controller = "org.rate.ratearestaurant.MyReviewsController">
+    <children>
+        <VBox alignment = "CENTER" spacing = "20" prefWidth = "800" prefHeight = "800" layoutX = "0" layoutY = "0">
+            <children>
+                <MenuBar prefHeight = "25.0" prefWidth = "800.0">
+                    <menus>
+                        <Menu mnemonicParsing = "false" text = "Back to Restaurant Search">
+                            <items>
+                                <MenuItem fx:id = "back" mnemonicParsing = "false" onAction = "#backToRestaurantSearch" text = "Leave page?"/>
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <Label text = "My Reviews" textAlignment = "CENTER">
+                    <font>
+                        <Font size = "18.0"/>
+                    </font>
+                </Label>
+                <TableView fx:id = "tableView" prefHeight = "700.0" prefWidth = "800.0">
+                    <columns>
+                        <TableColumn text = "Type" prefWidth = "150.0">
+                            <cellValueFactory>
+                                <PropertyValueFactory property = "restaurantType"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn text = "Name" prefWidth = "200.0">
+                            <cellValueFactory>
+                                <PropertyValueFactory property = "restaurantName"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn text = "Rating" prefWidth = "100.0">
+                            <cellValueFactory>
+                                <PropertyValueFactory property = "rating"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn text = "Comment" prefWidth = "350.0">
+                            <cellValueFactory>
+                                <PropertyValueFactory property = "comment"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                </TableView>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

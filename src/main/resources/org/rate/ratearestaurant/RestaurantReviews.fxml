@@ -1,0 +1,79 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight = "800.0" prefWidth = "800.0" xmlns = "http://javafx.com/javafx/17.0.2-ea" xmlns:fx = "http://javafx.com/fxml/1" fx:controller = "org.rate.ratearestaurant.RestaurantReviewsController">
+    <children>
+        <MenuBar prefHeight = "25.0" prefWidth = "800.0" layoutX = "0" layoutY = "0">
+            <menus>
+                <Menu mnemonicParsing = "false" text = "Actions">
+                    <items>
+                        <MenuItem mnemonicParsing = "false" onAction = "#deleteReview" text = "Delete Review"/>
+                        <MenuItem mnemonicParsing = "false" onAction = "#openEditReview" text = "Edit Review"/>
+                        <MenuItem mnemonicParsing = "false" onAction = "#openAddReview" text = "Add Review"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing = "false" text = "Back to Restaurant Search">
+                    <items>
+                        <MenuItem fx:id = "back" mnemonicParsing = "false" onAction = "#backtoSearch" text = "Confirm Back to Restaurant Search"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <VBox alignment = "CENTER" spacing = "20" prefWidth = "800" prefHeight = "800" layoutX = "0" layoutY = "25">
+            <children>
+                <GridPane hgap = "10" vgap = "10" alignment = "CENTER">
+                    <children>
+                        <Label text = "Restaurant Info" GridPane.rowIndex = "0" GridPane.columnIndex = "0" GridPane.columnSpan = "3" textAlignment = "CENTER" textFill = "DODGERBLUE"/>
+                    </children>
+                </GridPane>
+                <TableView fx:id = "top" prefHeight = "200.0" prefWidth = "800.0">
+                    <columns>
+                        <TableColumn text = "Type" prefWidth = "150.0">
+                            <cellValueFactory>
+                                <PropertyValueFactory property = "restaurantType"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn text = "Name" prefWidth = "200.0">
+                            <cellValueFactory>
+                                <PropertyValueFactory property = "restaurantName"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn text = "Address" prefWidth = "300.0">
+                            <cellValueFactory>
+                                <PropertyValueFactory property = "restaurantAddress"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn text = "Average Rating" prefWidth = "150.0">
+                            <cellValueFactory>
+                                <PropertyValueFactory property = "avgRating"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                </TableView>
+                <Label alignment = "CENTER" prefHeight = "24.0" prefWidth = "800.0" text = "Reviews" textAlignment = "CENTER"/>
+                <TableView fx:id = "bottom" prefHeight = "400.0" prefWidth = "800.0">
+                    <columns>
+                        <TableColumn text = "Rating" prefWidth = "75.0">
+                            <cellValueFactory>
+                                <PropertyValueFactory property = "rating"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn text = "Timestamp" prefWidth = "150.0">
+                            <cellValueFactory>
+                                <PropertyValueFactory property = "timestamp"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn text = "Comment" prefWidth = "575.0">
+                            <cellValueFactory>
+                                <PropertyValueFactory property = "comment"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                </TableView>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

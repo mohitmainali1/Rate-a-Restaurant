@@ -1,0 +1,81 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<AnchorPane prefHeight = "800.0" prefWidth = "800.0" xmlns = "http://javafx.com/javafx/21" xmlns:fx = "http://javafx.com/fxml/1" fx:controller = "org.rate.ratearestaurant.RestaurantSearchController">
+    <children>
+        <VBox alignment = "CENTER" spacing = "20" prefWidth = "800" prefHeight = "800" layoutX = "0" layoutY = "0">
+            <children>
+                <MenuBar prefHeight = "25.0" prefWidth = "800.0">
+                    <menus>
+                        <Menu mnemonicParsing = "false" onAction = "#myReviews" text = "My Account">
+                            <items>
+                                <MenuItem mnemonicParsing = "false" text = "View my reviews"/>
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing = "false" text = "Add Restaurants">
+                            <items>
+                                <MenuItem mnemonicParsing = "false" onAction = "#goToNewRestaurant" text = "Add a new restaurant"/>
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing = "false" onAction = "#logout" text = "Logout">
+                            <items>
+                                <MenuItem mnemonicParsing = "false" text = "Confirm logout?"/>
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <GridPane hgap = "10" vgap = "10" alignment = "CENTER">
+                    <children>
+                        <Label text = "Type:" GridPane.rowIndex = "0" GridPane.columnIndex = "0">
+                            <textFill>
+                                <Color fx:constant = "DODGERBLUE"/>
+                            </textFill>
+                        </Label>
+                        <TextField fx:id = "type" GridPane.rowIndex = "0" GridPane.columnIndex = "1" prefHeight = "25.0" prefWidth = "100.0"/>
+                        <Label text = "Name:" GridPane.rowIndex = "0" GridPane.columnIndex = "2">
+                            <textFill>
+                                <Color fx:constant = "DODGERBLUE"/>
+                            </textFill>
+                        </Label>
+                        <TextField fx:id = "name" GridPane.rowIndex = "0" GridPane.columnIndex = "3" prefHeight = "25.0" prefWidth = "150.0"/>
+                        <Label text = "Address:" GridPane.rowIndex = "0" GridPane.columnIndex = "4">
+                            <textFill>
+                                <Color fx:constant = "DODGERBLUE"/>
+                            </textFill>
+                        </Label>
+                        <TextField fx:id = "address" GridPane.rowIndex = "0" GridPane.columnIndex = "5" prefHeight = "25.0" prefWidth = "200.0"/>
+                        <Button fx:id = "search" GridPane.rowIndex = "0" GridPane.columnIndex = "6" mnemonicParsing = "false" onAction = "#SearchCourseByAll" text = "Search" style = "-fx-background-color: deepskyblue; -fx-text-fill: white;"/>
+                    </children>
+                </GridPane>
+                <TableView fx:id = "tableView" prefHeight = "700.0" prefWidth = "800.0">
+                    <columns>
+                        <TableColumn text = "Type" prefWidth = "150.0">
+                            <cellValueFactory>
+                                <PropertyValueFactory property = "restaurantType"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn text = "Name" prefWidth = "200.0">
+                            <cellValueFactory>
+                                <PropertyValueFactory property = "restaurantName"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn text = "Address" prefWidth = "300.0">
+                            <cellValueFactory>
+                                <PropertyValueFactory property = "restaurantAddress"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn text = "Average Rating" prefWidth = "150.0">
+                            <cellValueFactory>
+                                <PropertyValueFactory property = "avgRating"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                </TableView>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
